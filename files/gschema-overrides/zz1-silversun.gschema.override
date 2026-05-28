@@ -16,5 +16,6 @@ donation-reminder-enabled=false
 power-button-action='interactive'
 
 [org.gnome.shell]
+allow-extension-installation=false
 disable-user-extensions=true
 enabled-extensions=['']
