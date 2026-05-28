@@ -5,7 +5,6 @@ configurations:
       title: Flathub (User)
   - notify: true
     install:
-      - io.github.kolunmi.Bazaar
       - org.gnome.Calculator
       - org.gnome.TextEditor
       - org.mozilla.firefox
