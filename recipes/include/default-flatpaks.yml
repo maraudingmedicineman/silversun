@@ -1,4 +1,4 @@
-type: default-flatpaks@v2
+type: default-flatpaks
 configurations:
   - scope: user
     repo:
