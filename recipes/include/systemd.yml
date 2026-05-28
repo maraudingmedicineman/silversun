@@ -4,9 +4,6 @@ system:
     - flatpak-add-fedora-repos.service
 user:
   enabled:
-<<<<<<< HEAD
     - flatpak-user-update.service
-=======
->>>>>>> refs/remotes/origin/main
     - podman.service
     - podman.socket
