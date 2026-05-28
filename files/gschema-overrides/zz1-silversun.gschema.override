@@ -1,4 +1,4 @@
-[org.gnome.desktop.input.sources]
+[org.gnome.desktop.input-sources]
 xkb-options=['caps:super', 'shift:both_capslock']
 
 [org.gnome.desktop.interface]
