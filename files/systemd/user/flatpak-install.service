@@ -1,10 +1,10 @@
 [Unit]
 Description=Install per-user flatpaks
-ConditionUser=!@system
+After=graphical-session.target
+ConditionPathExists=/usr/share/bluebuild/default-flatpaks/configuration.yaml
 
 [Service]
 Type=simple
-ExecStartPre=/usr/bin/sleep 10
 ExecStart=/usr/bin/bluebuild-flatpak-manager apply user
 
 [Install]
