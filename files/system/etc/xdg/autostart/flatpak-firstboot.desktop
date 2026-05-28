@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Flatpak-Firstboot
-Encoding=UTF-8
-Version=1.0
-Type=Application
-NoDisplay=true
-Terminal=false
-Exec=/usr/bin/bluebuild-flatpak-manager apply user
