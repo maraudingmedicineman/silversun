@@ -14,7 +14,7 @@ image-version: 44 # latest is also supported if you want new updates ASAP
 modules:
   - from-file: include/default-flatpaks.yml
   - from-file: include/dnf.yml
-#  - from-file: include/files.yml
+  - from-file: include/files.yml
   - from-file: include/scripts.yml
   - from-file: include/systemd.yml
 #  - type: gschema-overrides
