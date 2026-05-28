@@ -10,6 +10,7 @@ snippets:
   - echo "disable flatpak-add-fedora-repos.service" >> /usr/lib/systemd/system-preset/00-silversun-system.preset
   - echo "enable bootc-fetch-updates.timer" >> /usr/lib/systemd/system-preset/00-silversun-system.preset
   - echo -e "\033[Populating user service defaults...\033[0m"
+  - echo "enable flatpak-install.service" >> /usr/lib/systemd/user-preset/00-silversun-user.preset
   - echo "enable flatpak-user-update.timer" >> /usr/lib/systemd/user-preset/00-silversun-user.preset
   - echo "enable podman.service" >> /usr/lib/systemd/user-preset/00-silversun-user.preset
   - echo "enable podman.socket" >> /usr/lib/systemd/user-preset/00-silversun-user.preset

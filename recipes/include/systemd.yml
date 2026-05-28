@@ -6,6 +6,7 @@ system:
     - bootc-fetch-updates.timer
 user:
   enabled:
+    - flatpak-install.service
     - flatpak-user-update.timer
     - podman.service
     - podman.socket

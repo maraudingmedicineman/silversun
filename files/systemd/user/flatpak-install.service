@@ -1,0 +1,12 @@
+[Unit]
+Description=Install per-user flatpaks
+ConditionUser=!@system
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bluebuild-flatpak-manager apply user
+
+[Install]
+WantedBy=graphical-session.target
