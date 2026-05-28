@@ -21,6 +21,8 @@ remove:
     - gnome-shell-extension-window-list
     - gnome-software
     - gnome-software-rpm-ostree
+    - gnome-system-monitor
+    - gnome-tour
     - toolbox
     - vim-data
     - vim-minimal
