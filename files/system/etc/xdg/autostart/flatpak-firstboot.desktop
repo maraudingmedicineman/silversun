@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Hidden=true
+NoDisplay=true
+Terminal=false
+Exec=/usr/bin/bluebuild-flatpak-manager apply user
