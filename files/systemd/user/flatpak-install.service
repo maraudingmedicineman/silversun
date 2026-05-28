@@ -4,6 +4,7 @@ ConditionUser=!@system
 
 [Service]
 Type=simple
+ExecStartPre=/usr/bin/sleep 10
 ExecStart=/usr/bin/bluebuild-flatpak-manager apply user
 
 [Install]

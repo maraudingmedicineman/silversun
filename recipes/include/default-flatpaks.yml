@@ -3,7 +3,7 @@ configurations:
   - scope: user
     repo:
       title: Flathub (User)
-  - notify: false
+  - notify: true
     install:
       - org.gnome.Calculator
       - org.gnome.TextEditor
