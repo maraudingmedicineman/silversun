@@ -31,6 +31,10 @@ allow-extension-installation=false
 disable-user-extensions=true
 enabled-extensions=['']
 
+[org.gnome.shell.keybindings]
+toggle-application-view=['']
+toggle-quick-settings=['<Control><Super>s']
+
 [org.gnome.software]
 allow-updates=false
 download-updates=false
