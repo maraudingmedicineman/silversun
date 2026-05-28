@@ -1,4 +1,4 @@
-- name: Build ISO
+name: Build ISO
   uses: jasonn3/build-container-installer@main
   id: build
   with:
@@ -11,7 +11,7 @@
     iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_TAG }}-${{ env.VERSION }}.iso
 
 # This example is for uploading your ISO as a Github artifact. You can do something similar using any cloud storage, so long as you copy the output
-- name: Upload ISO as artifact
+name: Upload ISO as artifact
   id: upload
   uses: actions/upload-artifact@v4
   with:
