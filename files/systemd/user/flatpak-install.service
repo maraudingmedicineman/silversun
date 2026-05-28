@@ -1,14 +1,10 @@
 [Unit]
 Description=Install per-user flatpaks
 ConditionUser=!@system
-Wants=network-online.target dbus-user-session.service
-After=network-online.target dbus-user-session.service
 
 [Service]
 Type=simple
-Environment=DBUS_SESSION_BUS_ADDRESS=%t/bus
 ExecStart=/usr/bin/bluebuild-flatpak-manager apply user
-Restart=no
 
 [Install]
 WantedBy=graphical-session.target
