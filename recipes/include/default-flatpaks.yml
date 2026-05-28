@@ -8,6 +8,4 @@ configurations:
       - io.github.kolunmi.Bazaar
       - org.gnome.Calculator
       - org.gnome.TextEditor
-      - org.gtk.Gtk3theme.adw-gtk3
-      - org.gtk.Gtk3theme.adw-gtk3-dark
       - org.mozilla.firefox
