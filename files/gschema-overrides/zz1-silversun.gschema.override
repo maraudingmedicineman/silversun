@@ -19,3 +19,10 @@ power-button-action='interactive'
 allow-extension-installation=false
 disable-user-extensions=true
 enabled-extensions=['']
+
+[org.gnome.software]
+allow-updates=false
+download-updates=false
+download-updates-notify=false
+enable-repos-dialog=false
+packaging-format-preference=['flatpak:flathub-user']
