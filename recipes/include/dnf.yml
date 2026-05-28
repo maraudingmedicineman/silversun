@@ -1,0 +1,26 @@
+type: dnf
+install:
+  packages:
+    - distrobox
+    - shellcheck
+remove:
+  packages:
+    - fedora-bookmarks
+    - fedora-flathub-remote
+    - fedora-third-party
+    - fedora-workstation-backgrounds
+    - firefox
+    - firefox-langpacks
+    - gnome-backgrounds
+    - gnome-classic-session
+    - gnome-shell-extension-apps-menu
+    - gnome-shell-extension-background-logo
+    - gnome-shell-extension-common
+    - gnome-shell-extension-launch-new-instance
+    - gnome-shell-extension-places-menu
+    - gnome-shell-extension-window-list
+    - gnome-software
+    - gnome-software-rpm-ostree
+    - toolbox
+    - vim-data
+    - vim-minimal

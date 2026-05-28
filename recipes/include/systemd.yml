@@ -1,0 +1,8 @@
+type: systemd
+system:
+  disabled:
+    - flatpak-add-fedora-repos.service
+user:
+  enabled:
+    - podman.service
+    - podman.socket
