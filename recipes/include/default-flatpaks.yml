@@ -1,9 +1,9 @@
 type: default-flatpaks
 configurations:
-  - scope: user
+  - notify: false
+    scope: user
     repo:
       title: Flathub (User)
-  - notify: false
     install:
       - org.gnome.Calculator
       - org.gnome.TextEditor
