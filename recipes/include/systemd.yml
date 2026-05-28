@@ -4,6 +4,6 @@ system:
     - flatpak-add-fedora-repos.service
 user:
   enabled:
-    - flatpak-user-update.service
+    - flatpak-user-update.timer
     - podman.service
     - podman.socket
