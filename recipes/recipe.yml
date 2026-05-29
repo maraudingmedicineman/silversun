@@ -3,7 +3,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: silversun
 # description will be included in the image's metadata
-description: Boring bootc desktop.
+description: Fedora Silverblue (bootc) image with reduced distractions and tweaked keybindings.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: quay.io/fedora-ostree-desktops/silverblue

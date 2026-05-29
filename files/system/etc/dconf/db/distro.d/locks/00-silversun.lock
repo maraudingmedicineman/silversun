@@ -1,3 +1,4 @@
+# Reduce common sources of distraction (this isn't a "ricing" image).
 /org/gnome/desktop/background/picture-uri
 /org/gnome/desktop/background/picture-uri-dark
 /org/gnome/desktop/interface/accent-color
@@ -5,7 +6,13 @@
 /org/gnome/desktop/interface/icon-theme
 /org/gnome/desktop/interface/remove-old-trash-files
 /org/gnome/desktop/screensaver/picture-uri
+/org/gnome/login-screen/fallback-logo
+/org/gnome/login-screen/logo
+
+# Ditto.
 /org/gnome/settings-daemon/plugins/housekeeping
+
+# Disable things we don't use for system integrity.
 /org/gnome/software/allow-updates
 /org/gnome/software/download-updates
 /org/gnome/software/download-updates-notify

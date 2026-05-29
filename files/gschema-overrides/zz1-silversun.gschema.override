@@ -1,40 +1,54 @@
+# See below for rationale: [org.gnome.desktop.wm.keybindings]
 [org.gnome.desktop.input-sources]
 xkb-options=['caps:super', 'shift:both_capslock']
 
+# Simplify font presets.
 [org.gnome.desktop.interface]
 font-hinting='none'
 font-rendering='manual'
 
+# Get rid of old trash files by default.
 [org.gnome.desktop.privacy]
 remove-old-trash-files=true
 
+# Inspired by: https://extensions.gnome.org/extension/6768/lomotion/
 [org.gnome.desktop.wm.keybindings]
 close=['<Super>q']
+minimize=['<Shift><Super>q']
 move-to-workspace-left=['<Super>d']
 move-to-workspace-right=['<Super>f']
 switch-to-workspace-left=['<Super>a']
 switch-to-workspace-right=['<Super>s']
 switch-windows=['<Super>e']
 toggle-fullscreen=['<Super>z']
+toggle-maximized=['<Shift><Super>z']
+toggle-tiled-left=['<Shift><Super>a']
+toggle-tiled-right=['<Shift><Super>s']
 
+# Clean session by default.
 [org.gnome.Ptyxis]
 restore-session=false
 
+# I think this speaks for itself.
 [org.gnome.settings-daemon.plugins.housekeeping]
 donation-reminder-enabled=false
 
+# Ask before shutting down my computer.
 [org.gnome.settings-daemon.plugins.power]
 power-button-action='interactive'
 
+# Disable and disallow extensions for maximum stability.
 [org.gnome.shell]
 allow-extension-installation=false
 disable-user-extensions=true
 enabled-extensions=['']
 
+# Accommodate for above window manager keybindings.
 [org.gnome.shell.keybindings]
 toggle-application-view=['']
 toggle-quick-settings=['<Control><Super>s']
 
+# We're on a flatpak-first system provided by blue-build.
 [org.gnome.software]
 allow-updates=false
 download-updates=false

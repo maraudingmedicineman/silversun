@@ -5,15 +5,17 @@ set -euo pipefail
 cat << 'EOF' > /etc/profile.d/bootc-override.sh
 rpm-ostree()
 {
-
+	# Without arguments, finish normally.
 	if [[ $# -eq 0 ]]; then
+
 		/usr/bin/rpm-ostree
 		return
+
 	fi
+	# Mask rpm-ostree options with bootc equivalents.
+	for OPTS in "$@"; do
 
-	for ARG in "$@"; do
-
-		case "$ARG" in
+		case "$OPTS" in
 
 			rebase ) bootc switch
 			return
@@ -35,11 +37,13 @@ EOF
 cat << 'EOF' > /etc/profile.d/bootc.sh
 if [ "$EUID" -ne 0 ]; then
     bootc() {
-
+	# Keep otherwise normal.
         if [ "$EUID" -eq 0 ]; then
-            /usr/bin/bootc "$@"
-        else
 
+            /usr/bin/bootc "$@"
+
+        else
+		# Mask bootc options so we don't have to prefix with sudo.
 		case "$1" in
 
 			status | update | upgrade ) sudo /usr/bin/bootc "$@" ;;
