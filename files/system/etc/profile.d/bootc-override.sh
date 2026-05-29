@@ -2,21 +2,21 @@
 
 set -euo pipefail
 
-cat << 'EOF' > /etc/profile.d/prefer-bootc-over-rpm-ostree.sh
+cat << 'EOF' > /etc/profile.d/bootc-override.sh
 
 rpm-ostree() {
   if [[ ${#} -eq 0 ]]; then
     /usr/bin/rpm-ostree
   elif [[ -n "$(awk '/(^|\s)("update"|"upgrade")($|\s)/' <<< "${@}")" ]]; then
-    cat <<- 'EOF'
-	This image is built with using bootc.
-	Please use `bootc upgrade` instead
-	EOF
+cat <<- 'EOF'
+This image is built with using bootc.
+Please use `bootc upgrade` instead
+EOF
   elif [[ -n "$(awk '/(^|\s)("rebase")($|\s)/' <<< "${@}")" ]]; then
-    cat <<- 'EOF'
-	This image is built with using bootc.
-	Please use `bootc switch name/of/image` instead
-	EOF
+cat <<- 'EOF'
+This image is built with using bootc.
+Please use `bootc switch name/of/image` instead
+EOF
   else
     /usr/bin/rpm-ostree "${@}"
   fi
