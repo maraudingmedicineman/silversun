@@ -13,19 +13,19 @@ rpm-ostree()
 
 	for ARG in "$@"; do
 
-                case "$ARG" in
+		case "$ARG" in
 
-                        rebase ) bootc switch
+			rebase ) bootc switch
 			return
 			;;
 
-                        update | upgrade ) bootc upgrade
+			update | upgrade ) bootc upgrade
 			return
 			;;
 
-                esac
+		esac
 
-        done
+	done
 
 }
 
