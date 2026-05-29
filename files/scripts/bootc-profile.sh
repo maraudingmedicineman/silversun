@@ -3,17 +3,25 @@
 set -euo pipefail
 
 cat << 'EOF' > /etc/profile.d/bootc-override.sh
+rpm-ostree()
+{
 
-rpm-ostree() {
-  if [[ ${#} -eq 0 ]]; then
-    /usr/bin/rpm-ostree
-  elif [[ -n "$(awk '/(^|\s)('"'update'|'upgrade'"')($|\s)/' <<< "${@}")" ]]; then
-	echo "Unsupported. Use 'bootc update' and 'bootc upgrade'."
-  elif [[ -n "$(awk '/(^|\s)('"'rebase'"')($|\s)/' <<< "${@}")" ]]; then
-	echo "Unsupported. Use 'bootc switch'."
-  else
-    /usr/bin/rpm-ostree "${@}"
-  fi
+        if [[ $# -eq 0 ]]; then
+                /usr/bin/rpm-ostree
+        fi
+
+	for ARG in "$@"; do
+
+                case "$ARG" in
+
+                        rebase ) bootc switch ;;
+
+                        update | upgrade ) bootc upgrade ;;
+
+                esac
+
+        done
+
 }
 
 export -f rpm-ostree
@@ -26,11 +34,15 @@ if [ "$EUID" -ne 0 ]; then
         if [ "$EUID" -eq 0 ]; then
             /usr/bin/bootc "$@"
         else
-          if [ "$1" = "update" ] || [ "$1" = "upgrade" ] || [ "$1" = "status" ]; then
-            sudo /usr/bin/bootc "$@"
-          else
-            /usr/bin/bootc "$@"
-          fi
+
+		case "$1" in
+
+			status | update | upgrade ) sudo /usr/bin/bootc "$@" ;;
+
+			* ) /usr/bin/bootc "$@" ;;
+
+		esac
+
         fi
     }
 fi
