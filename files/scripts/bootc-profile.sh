@@ -6,17 +6,22 @@ cat << 'EOF' > /etc/profile.d/bootc-override.sh
 rpm-ostree()
 {
 
-        if [[ $# -eq 0 ]]; then
-                /usr/bin/rpm-ostree
-        fi
+	if [[ $# -eq 0 ]]; then
+		/usr/bin/rpm-ostree
+		return
+	fi
 
 	for ARG in "$@"; do
 
                 case "$ARG" in
 
-                        rebase ) bootc switch ;;
+                        rebase ) bootc switch
+			return
+			;;
 
-                        update | upgrade ) bootc upgrade ;;
+                        update | upgrade ) bootc upgrade
+			return
+			;;
 
                 esac
 
