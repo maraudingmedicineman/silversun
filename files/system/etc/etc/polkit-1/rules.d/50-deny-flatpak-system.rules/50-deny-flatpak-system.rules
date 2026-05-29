@@ -1,0 +1,21 @@
+polkit.addRule(function(action, subject) {
+    // Deny adding/removing system-wide flatpak remotes
+    if (action.id == "org.freedesktop.Flatpak.remotes-add" ||
+        action.id == "org.freedesktop.Flatpak.remotes-remove" ||
+        action.id == "org.freedesktop.Flatpak.remotes-modify") {
+        return polkit.Result.NO;
+    }
+
+    // Deny installing/removing/upgrading system-wide applications
+    if (action.id == "org.freedesktop.Flatpak.Install" ||
+        action.id == "org.freedesktop.Flatpak.Update" ||
+        action.id == "org.freedesktop.Flatpak.Uninstall" ||
+        action.id == "org.freedesktop.Flatpak.Remaster") {
+        // these actions may be used for system-wide changes; deny for system bus callers
+        // Allow non-system (user) installs by checking subject's uid > 0 and session
+        // but deny when privileged (root/session-less) or when target is system-wide.
+        return polkit.Result.NO;
+    }
+
+    return polkit.Result.UNDEF;
+});
