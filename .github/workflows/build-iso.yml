@@ -27,7 +27,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_name: [gidro-os]
+        image_name: [silversun]
         major_version: [44]
         image_tag: [latest]
 
