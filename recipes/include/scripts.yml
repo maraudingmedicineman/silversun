@@ -1,6 +1,6 @@
 type: script
 scripts:
-  - bootc-override.sh
+  - bootc-profile.sh
   - default-background.sh
 snippets:
   - echo -e "\033[1;33mDisabling local layering...\033[0m"

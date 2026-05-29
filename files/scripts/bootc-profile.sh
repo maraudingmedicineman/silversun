@@ -8,15 +8,9 @@ rpm-ostree() {
   if [[ ${#} -eq 0 ]]; then
     /usr/bin/rpm-ostree
   elif [[ -n "$(awk '/(^|\s)("update"|"upgrade")($|\s)/' <<< "${@}")" ]]; then
-cat <<- 'EOF'
-This image is built with using bootc.
-Please use `bootc upgrade` instead
-EOF
+	echo "This image is built with bootc. Use `bootc update` and `bootc upgrade`."
   elif [[ -n "$(awk '/(^|\s)("rebase")($|\s)/' <<< "${@}")" ]]; then
-cat <<- 'EOF'
-This image is built with using bootc.
-Please use `bootc switch name/of/image` instead
-EOF
+	echo "This image is built with bootc. Use `bootc switch`."
   else
     /usr/bin/rpm-ostree "${@}"
   fi
