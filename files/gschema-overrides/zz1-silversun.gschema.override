@@ -22,6 +22,8 @@ switch-to-workspace-right=['<Super>s']
 switch-windows=['<Super>e']
 toggle-fullscreen=['<Super>z']
 toggle-maximized=['<Shift><Super>z']
+
+[org.gnome.mutter.keybindings]
 toggle-tiled-left=['<Shift><Super>a']
 toggle-tiled-right=['<Shift><Super>s']
 
