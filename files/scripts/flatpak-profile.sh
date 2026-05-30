@@ -15,9 +15,14 @@ flatpak()
 	fi
 	# Politely warn user of unsupported actions.
 	case " $@ " in
-	# Spaces are there so argument positions are respected.
+
 		*" --system "* )
 		echo "Unsupported:'--system'"
+		return
+		;;
+
+		* )
+		command /usr/bin/flatpak "$@"
 		return
 		;;
 
