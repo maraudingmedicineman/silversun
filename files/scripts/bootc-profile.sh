@@ -5,29 +5,25 @@ set -euo pipefail
 cat << 'EOF' > /etc/profile.d/bootc-override.sh
 rpm-ostree()
 {
-	# Without arguments, finish normally.
-	if [[ $# -eq 0 ]]; then
+	# Preserve tab-completion.
+	if [[ -n "${COMP_LINE-}" || -n "${COMP_POINT-}" ]]; then
 
-		/usr/bin/rpm-ostree
+		command /usr/bin/rpm-ostree "$@"
 		return
 
 	fi
 	# Mask rpm-ostree options with bootc equivalents.
-	for OPTS in "$@"; do
+	case "$@" in
 
-		case "$OPTS" in
+		rebase ) bootc switch
+		return
+		;;
 
-			rebase ) bootc switch
-			return
-			;;
+		update | upgrade ) bootc upgrade
+		return
+		;;
 
-			update | upgrade ) bootc upgrade
-			return
-			;;
-
-		esac
-
-	done
+	esac
 
 }
 
@@ -35,10 +31,10 @@ export -f rpm-ostree
 EOF
 
 cat << 'EOF' > /etc/profile.d/bootc.sh
-if [ "$EUID" -ne 0 ]; then
+if [[ "$EUID" -ne 0 ]]; then
     bootc() {
 	# Keep otherwise normal.
-        if [ "$EUID" -eq 0 ]; then
+        if [[ "$EUID" -eq 0 ]]; then
 
             /usr/bin/bootc "$@"
 
