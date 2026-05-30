@@ -23,6 +23,11 @@ rpm-ostree()
 		return
 		;;
 
+		* )
+		command /usr/bin/rpm-ostree "$@"
+		return
+		;;
+
 	esac
 
 }
