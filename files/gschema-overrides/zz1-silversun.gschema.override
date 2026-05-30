@@ -14,7 +14,7 @@ remove-old-trash-files=true
 # Inspired by: https://extensions.gnome.org/extension/6768/lomotion/
 [org.gnome.desktop.wm.keybindings]
 close=['<Super>q']
-cycle-windows=['<Supder>e']
+cycle-windows=['<Super>e']
 cycle-windows-backward=['<Shift><Super>e']
 minimize=['<Shift><Super>q']
 move-to-workspace-left=['<Super>d']
