@@ -14,12 +14,13 @@ remove-old-trash-files=true
 # Inspired by: https://extensions.gnome.org/extension/6768/lomotion/
 [org.gnome.desktop.wm.keybindings]
 close=['<Super>q']
+cycle-windows=['<Supder>e']
+cycle-windows-backward=['<Shift><Super>e']
 minimize=['<Shift><Super>q']
 move-to-workspace-left=['<Super>d']
 move-to-workspace-right=['<Super>f']
 switch-to-workspace-left=['<Super>a']
 switch-to-workspace-right=['<Super>s']
-switch-windows=['<Super>e']
 toggle-fullscreen=['<Super>z']
 toggle-maximized=['<Shift><Super>z']
 
@@ -39,7 +40,7 @@ donation-reminder-enabled=false
 [org.gnome.settings-daemon.plugins.power]
 power-button-action='interactive'
 
-# Disable and disallow extensions for maximum stability.
+# Disable and disallow extensions for maximum stability and minimal distractions.
 [org.gnome.shell]
 allow-extension-installation=false
 disable-user-extensions=true
