@@ -2,6 +2,8 @@
 
 set -eou pipefail
 
+echo -e "\033[1;33mSAdding custom flatpak parameters to /etc/profile.d...\033[0m"
+
 cat << 'EOF' > /etc/profile.d/unsupported.sh
 # Silversun is per-user focused, so system-wide flatpak operations are unsupported.
 flatpak()

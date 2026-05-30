@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+echo -e "\033[1;33mAdding custom bootc parameters to /etc/profile.d...\033[0m"
+
 cat << 'EOF' > /etc/profile.d/bootc-override.sh
 rpm-ostree()
 {
@@ -15,11 +17,23 @@ rpm-ostree()
 	# Mask rpm-ostree options with bootc equivalents.
 	case "$@" in
 
-		rebase ) bootc switch
+		"rebase" )
+		sudo /usr/bin/bootc switch
 		return
 		;;
 
-		update | upgrade ) bootc upgrade
+		"status" )
+		sudo /usr/bin/bootc status
+		return
+		;;
+
+		"status --booted" )
+		sudo /usr/bin/bootc status --booted
+		return
+		;;
+
+		"update" | "upgrade" )
+		/usr/bin/bootc upgrade
 		return
 		;;
 
@@ -41,15 +55,22 @@ if [[ "$EUID" -ne 0 ]]; then
 	# Keep otherwise normal.
         if [[ "$EUID" -eq 0 ]]; then
 
-            /usr/bin/bootc "$@"
+		command /usr/bin/bootc "$@"
+		return
 
         else
 		# Mask bootc options so we don't have to prefix with sudo.
 		case "$1" in
 
-			status | update | upgrade ) sudo /usr/bin/bootc "$@" ;;
+			status | switch | update | upgrade )
+			sudo /usr/bin/bootc "$@"
+			return
+			;;
 
-			* ) /usr/bin/bootc "$@" ;;
+			* )
+			command /usr/bin/bootc "$@"
+			return
+			;;
 
 		esac
 
