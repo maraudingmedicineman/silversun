@@ -33,7 +33,7 @@ rpm-ostree()
 		;;
 
 		"update" | "upgrade" )
-		/usr/bin/bootc upgrade
+		sudo /usr/bin/bootc upgrade
 		return
 		;;
 
