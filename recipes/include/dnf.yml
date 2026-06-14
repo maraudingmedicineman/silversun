@@ -1,0 +1,36 @@
+type: dnf
+install:
+  allow-erasing: true
+  install-weak-deps: false
+  packages:
+    - distrobox # Best alternative to toolbox and even flatpak for certain situations.
+remove:
+  packages:
+    - appstream-data # GNOME Software is removed, making this useless.
+    - epiphany-runtime # Doesn't benefit from a flatpak-first setup.
+    - fedora-bookmarks # Useless to keep on image if using entirely flatpaks anyhow.
+    - fedora-chromium-config-gnome # Doesn't benefit from a flatpak-first setup.
+    - fedora-flathub-remote # Obsolete for the scope of this project.
+    - fedora-third-party # I don't install packages locally outside of build, so useless.
+    - fedora-workstation-backgrounds # Reduce distractions.
+    - fedora-workstation-repositories # See above.
+    - firefox # See above.
+    - firefox-langpacks # Hard requirement to remove the above dependency.
+    - gnome-backgrounds # See above.
+    - gnome-classic-session # Unsupported, see below.
+    - gnome-shell-extension-apps-menu # Extensions are unsupported in this image.
+    - gnome-shell-extension-background-logo
+    - gnome-shell-extension-common
+    - gnome-shell-extension-launch-new-instance
+    - gnome-shell-extension-places-menu
+    - gnome-shell-extension-window-list
+    - gnome-software # Bazaar is used as a graphical frontend for installing flatpaks.
+    - gnome-software-rpm-ostree # See above.
+    - gnome-system-monitor # Will be replaced by Resources.
+    - gnome-tour # Useless. I recommend this image to experts only anyways.
+    - toolbox # Distrobox replaces this.
+    - totem-video-thumbnailer # Doesn't benefit from a flatpak-first setup.
+    - vim-data # We only need nano as a bare-minimum text editor for maintenance reasons.
+    - vim-minimal # See above.
+    - yelp # Not very well maintained and a flatpak probably exists to substitute this.
+    - yelp-libs # Useless without the above installed.

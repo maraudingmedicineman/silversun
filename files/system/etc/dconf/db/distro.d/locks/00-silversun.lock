@@ -1,0 +1,26 @@
+# Reduce common sources of distraction, other riffraff.
+/org/gnome/desktop/background/picture-uri
+/org/gnome/desktop/background/picture-uri-dark
+/org/gnome/desktop/interface/accent-color
+/org/gnome/desktop/interface/gtk-theme
+/org/gnome/desktop/interface/icon-theme
+/org/gnome/desktop/interface/remove-old-trash-files
+/org/gnome/desktop/screensaver/picture-uri
+/org/gnome/login-screen/fallback-logo
+/org/gnome/login-screen/logo
+
+# Ditto.
+/org/gnome/settings-daemon/plugins/housekeeping
+/org/gnome/settings-daemon/plugins/media-keys/help
+
+# Extensions are NOT supported.
+/org/gnome/shell/allow-extension-installation
+/org/gnome/shell/disable-user-extensions
+/org/gnome/shell/enabled-extensions
+
+# Disable things we don't use for system integrity.
+/org/gnome/software/allow-updates
+/org/gnome/software/download-updates
+/org/gnome/software/download-updates-notify
+/org/gnome/software/enable-repos-dialog
+/org/gnome/software/packaging-format-preference

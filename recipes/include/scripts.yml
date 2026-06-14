@@ -1,0 +1,18 @@
+type: script
+scripts:
+  - default-background.sh
+snippets:
+  - echo -e "\033[1;33mDisabling package managers...\033[0m"
+  - ln -sf /usr/bin/false /usr/bin/dnf
+  - ln -sf /usr/bin/false /usr/bin/dnf5
+  - ln -sf /usr/bin/false /usr/bin/yum
+  - echo -e "\033[1;33mEnabling systemd presets...\033[0m"
+  - systemctl preset-all --preset-mode=enable-only
+  - systemctl --global preset-all --preset-mode=enable-only
+  - echo -e "\033[1;33mRemoving Fedora flatpak remotes service...\033[0m"
+  - systemctl disable flatpak-add-fedora-repos.service
+  - rm -f /usr/lib/systemd/system/flatpak-add-fedora-repos.service
+  - echo -e "\033[1;33mPrefer zstd initramfs compression...\033[0m"
+  - echo "compress=\"zstd\"" > /usr/lib/dracut/dracut.conf.d/10-compression.conf
+  - echo -e "\033[1;33mRestricting login shell changing...\033[0m"
+  - ln -sf /usr/bin/false /usr/bin/chsh

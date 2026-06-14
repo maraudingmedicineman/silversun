@@ -1,0 +1,67 @@
+# See '[org.gnome.desktop.wm.keybindings]' below for rationale.
+[org.gnome.desktop.input-sources]
+xkb-options=['caps:super', 'shift:both_capslock']
+
+# Simplify font presets.
+[org.gnome.desktop.interface]
+font-hinting='none'
+font-rendering='manual'
+
+# Get rid of old trash files by default.
+[org.gnome.desktop.privacy]
+remove-old-trash-files=true
+
+# Inspired by: https://extensions.gnome.org/extension/6768/lomotion/
+[org.gnome.desktop.wm.keybindings]
+close=['<Super>q']
+cycle-windows=['<Super>e']
+cycle-windows-backward=['<Shift><Super>e']
+minimize=['<Shift><Super>q']
+move-to-workspace-left=['<Super>d']
+move-to-workspace-right=['<Super>f']
+switch-to-workspace-left=['<Super>a']
+switch-to-workspace-right=['<Super>s']
+toggle-fullscreen=['<Super>z']
+toggle-maximized=['<Shift><Super>z']
+
+# Tile windows in accordance to the above keybindings.
+[org.gnome.mutter.keybindings]
+toggle-tiled-left=['<Shift><Super>a']
+toggle-tiled-right=['<Shift><Super>s']
+
+# Clean session by default.
+[org.gnome.Ptyxis]
+restore-session=false
+
+# I think this speaks for itself.
+[org.gnome.settings-daemon.plugins.housekeeping]
+donation-reminder-enabled=false
+
+# Disable now-useless help-browser keybinding.
+[org.gnome.settings-daemon.plugins.media-keys]
+help=[]
+
+# Ask before shutting down my computer.
+[org.gnome.settings-daemon.plugins.power]
+power-button-action='interactive'
+
+# General desktop settings.
+[org.gnome.shell]
+allow-extension-installation=false
+always-show-log-out=true
+disable-user-extensions=true
+enabled-extensions=[]
+favorite-apps=['io.github.kolunmi.Bazaar.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.github.marhkb.Pods.desktop', 'org.gnome.Ptyxis.desktop', 'org.gnome.TextEditor.desktop']
+
+# Accommodate for above window manager keybindings.
+[org.gnome.shell.keybindings]
+toggle-application-view=[]
+toggle-quick-settings=['<Control><Super>s']
+
+# We're on a flatpak-first system provided by blue-build.
+[org.gnome.software]
+allow-updates=false
+download-updates=false
+download-updates-notify=false
+enable-repos-dialog=false
+packaging-format-preference=['flatpak:flathub']

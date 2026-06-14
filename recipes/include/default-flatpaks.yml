@@ -1,0 +1,10 @@
+type: default-flatpaks
+configurations:
+    - scope: system # System-wide, meaning all users get these.
+      install:
+        - com.github.marhkb.Pods
+        - io.github.kolunmi.Bazaar # Replaces GNOME Software.
+        - org.gnome.Calculator
+        - org.gnome.TextEditor
+        - org.mozilla.firefox
+    - scope: user # Per-user, meaning single-user installs.

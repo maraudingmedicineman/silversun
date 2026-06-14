@@ -1,0 +1,4 @@
+type: systemd
+system:
+  masked:
+    - systemd-remount-fs.service # Fails due to how ComposeFS works.

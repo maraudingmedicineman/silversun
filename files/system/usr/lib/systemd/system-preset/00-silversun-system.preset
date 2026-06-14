@@ -1,0 +1,4 @@
+enable bootc-fetch-updates.timer
+enable flatpak-system-update.timer
+enable podman.service
+enable podman.socket

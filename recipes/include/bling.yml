@@ -1,0 +1,3 @@
+type: bling
+install:
+  - dconf-update-service # Handles updating the configuration database on startup.

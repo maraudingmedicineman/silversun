@@ -1,0 +1,8 @@
+# Relocatable schema's not typically registered at compile time.
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='ptyxis --new-window'
+name='Terminal'
+# Custom keybindings.
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
